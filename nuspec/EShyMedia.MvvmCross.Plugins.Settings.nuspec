@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>EShyMedia.MvvmCross.Plugins.Settings</id>
+        <version>1.0.0-beta1</version>
+        <title>EShyMedia.MvvmCross.Plugins.Settings</title>
+        <authors>Ishai Hachlili</authors>
+        <owners>Ishai Hachlili</owners>
+        <projectUrl>https://github.com/eshy/EShyMedia.MvvmCross.Plugins.Settings</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>An MvvmCross settings and secured settings plugin</description>
+        <tags>MvvmCross</tags>
+        <dependencies>
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="3.5.0-beta2" />
+        </dependencies>
+    </metadata>
+    <files>
+		<!-- PCL -->
+        <file src="..\Release\Mvx\Portable\EShyMedia.MvvmCross.Plugins.Settings.dll" target="lib\portable-win+net45+wp8+win8+wpa81+MonoTouch+MonoAndroid+Xamarin.iOS\EShyMedia.MvvmCross.Plugins.Settings.dll" />
+
+		<!-- windows common -->
+        <file src="..\Release\Mvx\Portable\EShyMedia.MvvmCross.Plugins.Settings.dll" target="lib\win81\EShyMedia.MvvmCross.Plugins.Settings.dll" />
+        <file src="..\Release\Mvx\WindowsCommon\EShyMedia.MvvmCross.Plugins.Settings.WindowsCommon.dll" target="lib\win81\EShyMedia.MvvmCross.Plugins.Settings.WindowsCommon.dll" />
+        <file src="BootstrapContent\SettingsPluginBootstrap.cs.pp" target="content\win81\Bootstrap\SettingsPluginBootstrap.cs.pp" />
+
+        <file src="..\Release\Mvx\Portable\EShyMedia.MvvmCross.Plugins.Settings.dll" target="lib\wpa81\EShyMedia.MvvmCross.Plugins.Settings.dll" />
+        <file src="..\Release\Mvx\WindowsCommon\EShyMedia.MvvmCross.Plugins.Settings.WindowsCommon.dll" target="lib\wpa81\EShyMedia.MvvmCross.Plugins.Settings.WindowsCommon.dll" />
+        <file src="BootstrapContent\SettingsPluginBootstrap.cs.pp" target="content\wpa81\Bootstrap\SettingsPluginBootstrap.cs.pp" />
+
+        <file src="..\Release\Mvx\Portable\EShyMedia.MvvmCross.Plugins.Settings.dll" target="lib\portable-win81+wpa81\EShyMedia.MvvmCross.Plugins.Settings.dll" />
+        <file src="..\Release\Mvx\WindowsCommon\EShyMedia.MvvmCross.Plugins.Settings.WindowsCommon.dll" target="lib\portable-win81+wpa81\EShyMedia.MvvmCross.Plugins.Settings.WindowsCommon.dll" />
+		
+		<!-- phone -->
+        <file src="..\Release\Mvx\Portable\EShyMedia.MvvmCross.Plugins.Settings.dll" target="lib\wp8\EShyMedia.MvvmCross.Plugins.Settings.dll" />
+        <file src="..\Release\Mvx\WindowsPhone\EShyMedia.MvvmCross.Plugins.Settings.WindowsPhone.dll" target="lib\wp8\EShyMedia.MvvmCross.Plugins.Settings.WindowsPhone.dll" />
+        <file src="BootstrapContent\SettingsPluginBootstrap.cs.pp" target="content\wp8\Bootstrap\SettingsPluginBootstrap.cs.pp" />
+		
+		<!-- droid -->
+        <file src="..\Release\Mvx\Portable\EShyMedia.MvvmCross.Plugins.Settings.dll" target="lib\MonoAndroid\EShyMedia.MvvmCross.Plugins.Settings.dll" />
+        <file src="..\Release\Mvx\Droid\EShyMedia.MvvmCross.Plugins.Settings.Droid.dll" target="lib\MonoAndroid\EShyMedia.MvvmCross.Plugins.Settings.Droid.dll" />
+        <file src="BootstrapContent\SettingsPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\SettingsPluginBootstrap.cs.pp" />
+
+		<!-- touch -->
+        <file src="..\Release\Mvx\Portable\EShyMedia.MvvmCross.Plugins.Settings.dll" target="lib\Xamarin.iOS\EShyMedia.MvvmCross.Plugins.Settings.dll" />
+        <file src="..\Release\Mvx\Touch\EShyMedia.MvvmCross.Plugins.Settings.Touch.dll" target="lib\Xamarin.iOS\EShyMedia.MvvmCross.Plugins.Settings.Touch.dll" />
+        <file src="TouchBootstrapContent\SettingsPluginBootstrap.cs.pp" target="content\Xamarin.iOS\Bootstrap\SettingsPluginBootstrap.cs.pp" />
+    </files>
+</package>
