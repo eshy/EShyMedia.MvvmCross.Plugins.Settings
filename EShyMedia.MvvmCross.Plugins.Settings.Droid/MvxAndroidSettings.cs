@@ -28,7 +28,7 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.Droid
             SecuredPreferencesEditor = SecuredPreferences.Edit();
         }
 
-        public T GetValueOrDefault<T>(string key, T defaultValue = default(T))
+        public T GetValueOrDefault<T>(string key, T defaultValue = default(T), bool roaming = false)
         {
             lock (locker)
             {
@@ -109,7 +109,7 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.Droid
             }
         }
 
-        public bool AddOrUpdateValue(string key, object value)
+        public bool AddOrUpdateValue<T>(string key, T value = default(T), bool roaming = false)
         {
             lock (locker)
             {
@@ -151,16 +151,8 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.Droid
                         SharedPreferencesEditor.PutLong(key, ((DateTime) (object) value).Ticks);
                         break;
                     default:
-                        if (value is Guid)
-                        {
-                            SharedPreferencesEditor.PutString(key, ((Guid) value).ToString());
-                        }
-                        else
-                        {
-                            throw new ArgumentException(string.Format("Value of type {0} is not supported.",
-                                value.GetType().Name));
-                        }
-                        break;
+                        throw new ArgumentException(string.Format("Value of type {0} is not supported.",
+                            value.GetType().Name));
                 }
             }
 
@@ -169,6 +161,27 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.Droid
                 SharedPreferencesEditor.Commit();
             }
             return true;
+        }
+
+        public bool DeleteValue(string key, bool roaming = false)
+        {
+            if (string.IsNullOrEmpty(key))
+            {
+                throw new ArgumentException("Key must have a value", "key");
+            }
+            SharedPreferencesEditor.Remove(key);
+            return SharedPreferencesEditor.Commit();
+        }
+
+        public bool Contains(string key, bool roaming = false)
+        {
+            return SharedPreferences.Contains(key);
+        }
+
+        public bool ClearAllValues(bool roaming = false)
+        {
+            SharedPreferencesEditor.Clear();
+            return SharedPreferencesEditor.Commit();
         }
 
         public string GetSecuredValue(string key)

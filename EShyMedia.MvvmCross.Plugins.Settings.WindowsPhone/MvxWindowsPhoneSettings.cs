@@ -10,7 +10,7 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.WindowsPhone
         static IsolatedStorageSettings Settings { get { return IsolatedStorageSettings.ApplicationSettings; } }
         private readonly object _locker = new object();
 
-        public T GetValueOrDefault<T>(string key, T defaultValue = default(T))
+        public T GetValueOrDefault<T>(string key, T defaultValue = default(T), bool roaming = false)
         {
             T value;
             lock (_locker)
@@ -30,7 +30,7 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.WindowsPhone
             return value;
         }
 
-        public bool AddOrUpdateValue(string key, object value)
+        public bool AddOrUpdateValue<T>(string key, T value = default(T), bool roaming = false)
         {
             bool valueChanged = false;
 
@@ -41,7 +41,7 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.WindowsPhone
                 {
 
                     // If the value has changed
-                    if (Settings[key] != value)
+                    if (!Settings[key].Equals(value))
                     {
                         // Store key new value
                         Settings[key] = value;
@@ -65,6 +65,30 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.WindowsPhone
             }
 
             return valueChanged;
+        }
+
+        public bool DeleteValue(string key, bool roaming = false)
+        {
+            if (!Settings.Contains(key))
+            {
+                return false;
+            }
+
+            Settings.Remove(key);
+            Settings.Save();
+            return true;
+        }
+
+        public bool Contains(string key, bool roaming = false)
+        {
+            return Settings.Contains(key);
+        }
+
+        public bool ClearAllValues(bool roaming = false)
+        {
+            Settings.Clear();
+            Settings.Save();
+            return true;
         }
 
         public string GetSecuredValue(string key)

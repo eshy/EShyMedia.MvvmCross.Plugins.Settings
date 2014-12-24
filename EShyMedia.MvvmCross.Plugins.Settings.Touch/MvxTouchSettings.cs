@@ -9,7 +9,7 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.Touch
     {
         private readonly object locker = new object();
 
-        public T GetValueOrDefault<T>(string key, T defaultValue = default(T))
+        public T GetValueOrDefault<T>(string key, T defaultValue = default(T), bool roaming = false)
         {
             lock (locker)
             {
@@ -88,11 +88,11 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.Touch
             }
         }
 
-        public bool AddOrUpdateValue(string key, object value)
+        public bool AddOrUpdateValue<T>(string key, T value = default(T), bool roaming = false)
         {
             lock (locker)
             {
-                Type typeOf = value.GetType();
+                var typeOf = value.GetType();
                 if (typeOf.IsGenericType && typeOf.GetGenericTypeDefinition() == typeof(Nullable<>))
                 {
                     typeOf = Nullable.GetUnderlyingType(typeOf);
@@ -126,15 +126,8 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.Touch
                         defaults.SetString(Convert.ToString(((DateTime)(object)value).Ticks), key);
                         break;
                     default:
-                        if (value is Guid)
-                        {
-                            defaults.SetString(((Guid)value).ToString(), key);
-                        }
-                        else
-                        {
-                            throw new ArgumentException(string.Format("Value of type {0} is not supported.", value.GetType().Name));
-                        }
-                        break;
+                        throw new ArgumentException(string.Format("Value of type {0} is not supported.",
+                            value.GetType().Name));
                 }
                 try
                 {
@@ -149,6 +142,39 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.Touch
 
 
             return true;
+        }
+
+        public bool DeleteValue(string key, bool roaming = false)
+        {
+            if (string.IsNullOrEmpty(key))
+            {
+                throw new ArgumentException("Key must have a value", "key");
+            }
+
+            var defaults = NSUserDefaults.StandardUserDefaults;
+            defaults.RemoveObject(key);
+            return defaults.Synchronize();
+        }
+
+        public bool Contains(string key, bool roaming = false)
+        {
+            var defaults = NSUserDefaults.StandardUserDefaults;
+            try
+            {
+                var stuff = defaults[key];
+                return stuff != null;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool ClearAllValues(bool roaming = false)
+        {
+            var defaults = NSUserDefaults.StandardUserDefaults;
+            defaults.RemovePersistentDomain(NSBundle.MainBundle.BundleIdentifier);
+            return defaults.Synchronize();
         }
 
         public string GetSecuredValue(string key)
