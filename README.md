@@ -1,0 +1,2 @@
+EShyMedia.MvvmCross.Plugins.Settings
+====================================
