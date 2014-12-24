@@ -2,6 +2,7 @@
 ====================================
 
 This plug-in is based on 
+
 The settings plug-ins:
 https://github.com/jamesmontemagno/Mvx.Plugins.Settings
 https://github.com/Cheesebaron/Cheesebaron.MvxPlugins
@@ -21,8 +22,11 @@ Install-Package EShyMedia.MvvmCross.Plugins.Settings
 
 Use the Settings class generated in the Core project under Helpers to get started.
 
+
 Use GetValueOrDefault and AddOrUpdateValue to get/save settings.
+
 Use GetSecuredValue and AddOrUpdateSecuredValue to get/save secured strings.
+
 
 On XAML apps (Windows/Windows Phone 8.1) you can also save roaming settings.
 
