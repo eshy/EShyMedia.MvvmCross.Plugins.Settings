@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>EShyMedia.MvvmCross.Plugins.Settings</id>
-        <version>1.0.0-beta1</version>
+        <version>1.0.0-beta3</version>
         <title>EShyMedia.MvvmCross.Plugins.Settings</title>
         <authors>Ishai Hachlili</authors>
         <owners>Ishai Hachlili</owners>
@@ -17,6 +17,7 @@
     <files>
 		<!-- PCL -->
         <file src="..\Release\Mvx\Portable\EShyMedia.MvvmCross.Plugins.Settings.dll" target="lib\portable-win+net45+wp8+win8+wpa81+MonoTouch+MonoAndroid+Xamarin.iOS\EShyMedia.MvvmCross.Plugins.Settings.dll" />
+		<file src="Settings.cs.pp" target="content\portable-win+net45+wp8+win8+wpa81+MonoTouch+MonoAndroid+Xamarin.iOS\Helpers\Settings.cs.pp" />
 
 		<!-- windows common -->
         <file src="..\Release\Mvx\Portable\EShyMedia.MvvmCross.Plugins.Settings.dll" target="lib\win81\EShyMedia.MvvmCross.Plugins.Settings.dll" />

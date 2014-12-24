@@ -1,6 +1,6 @@
 ﻿// Helpers/Settings.cs
 using Cirrious.CrossCore;
-using Refractored.MvxPlugins.Settings;
+using EShyMedia.MvvmCross.Plugins.Settings;
 
 namespace $rootnamespace$.Helpers
 {
