@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>EShyMedia.MvvmCross.Plugins.Settings</id>
-        <version>1.0.0-beta4</version>
+        <version>1.0.0</version>
         <title>EShyMedia.MvvmCross.Plugins.Settings</title>
         <authors>Ishai Hachlili</authors>
         <owners>Ishai Hachlili</owners>
@@ -11,7 +11,7 @@
         <description>An MvvmCross settings and secured settings plugin</description>
         <tags>MvvmCross</tags>
         <dependencies>
-            <dependency id="MvvmCross.HotTuna.CrossCore" version="3.5.0-beta2" />
+            <dependency id="MvvmCross.HotTuna.CrossCore" version="3.5.0" />
         </dependencies>
     </metadata>
     <files>
