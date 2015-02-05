@@ -24,7 +24,13 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.WindowsCommon
             object value;
 
             if (container.Values.TryGetValue(key, out value))
+            {
+                if (value is DateTimeOffset)
+                {
+                    value = ((DateTimeOffset)value).DateTime;
+                }
                 return (T) value;
+            }
 
             return defaultValue;
         }
@@ -50,6 +56,14 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.WindowsCommon
 
         public bool AddOrUpdateValue<T>(string key, T value = default(T), bool roaming = false)
         {
+            if (typeof (T) == typeof (DateTime))
+            {
+                var dt = ((DateTime) (object) value);
+
+                var dto = (DateTimeOffset)dt;
+                return AddOrUpdateValue(!roaming ? LocalSettings : RoamingSettings, key, dto);
+            }
+
             return AddOrUpdateValue(!roaming ? LocalSettings : RoamingSettings, key, value);
         }
 
