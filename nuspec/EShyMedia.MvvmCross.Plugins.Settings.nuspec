@@ -2,13 +2,16 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>EShyMedia.MvvmCross.Plugins.Settings</id>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <title>EShyMedia.MvvmCross.Plugins.Settings</title>
         <authors>Ishai Hachlili</authors>
         <owners>Ishai Hachlili</owners>
         <projectUrl>https://github.com/eshy/EShyMedia.MvvmCross.Plugins.Settings</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>An MvvmCross settings and secured settings plugin</description>
+		<releaseNotes>
+		1.01 - Fixed DateTime Settings support in Universal Windows Apps (WindowsCommon)
+		</releaseNotes>
         <tags>MvvmCross</tags>
         <dependencies>
             <dependency id="MvvmCross.HotTuna.CrossCore" version="3.5.0" />
