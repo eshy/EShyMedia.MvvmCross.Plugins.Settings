@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>EShyMedia.MvvmCross.Plugins.Settings</id>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
         <title>EShyMedia.MvvmCross.Plugins.Settings</title>
         <authors>Ishai Hachlili</authors>
         <owners>Ishai Hachlili</owners>
@@ -10,7 +10,7 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>An MvvmCross settings and secured settings plugin</description>
 		<releaseNotes>
-		1.01 - Fixed DateTime Settings support in Universal Windows Apps (WindowsCommon)
+		1.02 - Fixed issue with Windows Phone settings
 		</releaseNotes>
         <tags>MvvmCross</tags>
         <dependencies>

@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.IO.IsolatedStorage;
 using System.Security.Cryptography;
@@ -13,18 +14,16 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.WindowsPhone
         public T GetValueOrDefault<T>(string key, T defaultValue = default(T), bool roaming = false)
         {
             T value;
+            value = defaultValue;
             lock (_locker)
             {
-                // If the key exists, retrieve the value.
-                if (Settings.Contains(key))
-                {
-                    value = (T)Settings[key];
-                }
-                // Otherwise, use the default value.
-                else
-                {
-                    value = defaultValue;
-                }
+                try {
+                    // If the key exists, retrieve the value.
+                    if (Settings.Contains(key))
+                    {
+                        value = (T) Settings[key];
+                    }
+                } catch(Exception) {}
             }
 
             return value;
@@ -32,39 +31,54 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.WindowsPhone
 
         public bool AddOrUpdateValue<T>(string key, T value = default(T), bool roaming = false)
         {
-            bool valueChanged = false;
-
-            lock (_locker)
+            try
             {
-                // If the key exists
-                if (Settings.Contains(key))
+                var valueChanged = false;
+                if (string.IsNullOrWhiteSpace(key))
                 {
-
-                    // If the value has changed
-                    if (!Settings[key].Equals(value))
+                    throw new ArgumentNullException(nameof(key));
+                }
+                if (value == null)
+                {
+                    throw new ArgumentNullException(nameof(value));
+                }
+                lock (_locker)
+                {
+                    // If the key exists
+                    if (Settings.Contains(key))
                     {
-                        // Store key new value
-                        Settings[key] = value;
+
+                        // If the value has changed
+                        if (Settings[key] == null || !Settings[key].Equals(value))
+                        {
+                            // Store key new value
+                            Settings[key] = value;
+                            valueChanged = true;
+                        }
+                    }
+                    // Otherwise create the key.
+                    else
+                    {
+                        Settings.Add(key, value);
                         valueChanged = true;
                     }
                 }
-                // Otherwise create the key.
-                else
-                {
-                    Settings.Add(key, value);
-                    valueChanged = true;
-                }
-            }
 
-            if (valueChanged)
+                if (valueChanged)
+                {
+                    lock (_locker)
+                    {
+                        Settings.Save();
+                    }
+                }
+
+                return valueChanged;
+            }
+            catch (Exception ex)
             {
-                lock (_locker)
-                {
-                    Settings.Save();
-                }
+                
             }
-
-            return valueChanged;
+            return false;
         }
 
         public bool DeleteValue(string key, bool roaming = false)
