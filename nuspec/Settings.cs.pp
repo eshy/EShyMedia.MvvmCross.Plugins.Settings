@@ -1,5 +1,5 @@
 ﻿// Helpers/Settings.cs
-using Cirrious.CrossCore;
+using MvvmCross.Platform;
 using EShyMedia.MvvmCross.Plugins.Settings;
 
 namespace $rootnamespace$.Helpers
@@ -18,27 +18,10 @@ namespace $rootnamespace$.Helpers
             }
         }
 
-#region Setting Constants
-
-		private const string SettingsKey = "settings_key";
-		private static string SettingsDefault = string.Empty;
-
-#endregion
-
-	public static string GeneralSettings
+        public static string GeneralSetting
         {
-            get
-            {
-				return AppSettings.GetValueOrDefault(SettingsKey, SettingsDefault);
-            }
-            set
-            {
-                //if value has changed then save it!
-				AppSettings.AddOrUpdateValue(SettingsKey, value);
-
-            }
+            get { return AppSettings.GetValueOrDefault(nameof(GeneralSetting), "DefaultValue"); }
+            set { AppSettings.AddOrUpdateValue(nameof(GeneralSetting), value); }
         }
-
     }
-
 }
