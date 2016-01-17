@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShyMedia.MvvmCross.Plugins.Settings", "EShyMedia.MvvmCross.Plugins.Settings\EShyMedia.MvvmCross.Plugins.Settings.csproj", "{7836DD50-5306-422C-B516-CF706217EFD3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShyMedia.MvvmCross.Plugins.Settings.Droid", "EShyMedia.MvvmCross.Plugins.Settings.Droid\EShyMedia.MvvmCross.Plugins.Settings.Droid.csproj", "{FCE12871-0F77-4B73-82E7-536E38DAA045}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShyMedia.MvvmCross.Plugins.Settings.Touch", "EShyMedia.MvvmCross.Plugins.Settings.Touch\EShyMedia.MvvmCross.Plugins.Settings.Touch.csproj", "{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShyMedia.MvvmCross.Plugins.Settings.WindowsPhone", "EShyMedia.MvvmCross.Plugins.Settings.WindowsPhone\EShyMedia.MvvmCross.Plugins.Settings.WindowsPhone.csproj", "{07F5B7DD-2F46-4DA9-8E2F-C027E7024241}"
 EndProject
@@ -15,18 +13,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShyMedia.MvvmCross.Plugins
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{6AB3E0C7-62E1-4900-A68B-12EB471CC80B}"
 	ProjectSection(SolutionItems) = preProject
+		nuspec\EShyMedia.MvvmCross.Plugins.Settings.nuspec = nuspec\EShyMedia.MvvmCross.Plugins.Settings.nuspec
 		nuspec\Settings.cs.pp = nuspec\Settings.cs.pp
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TouchBootstrapContent", "TouchBootstrapContent", "{100B82CE-0A66-4B01-A491-D04F7685A52E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IosBootstrapContent", "IosBootstrapContent", "{100B82CE-0A66-4B01-A491-D04F7685A52E}"
 	ProjectSection(SolutionItems) = preProject
-		nuspec\TouchBootstrapContent\SettingsPluginBootstrap.cs.pp = nuspec\TouchBootstrapContent\SettingsPluginBootstrap.cs.pp
+		nuspec\IosBootstrapContent\SettingsPluginBootstrap.cs.pp = nuspec\IosBootstrapContent\SettingsPluginBootstrap.cs.pp
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BootstrapContent", "BootstrapContent", "{966A29EE-0477-404B-BD17-08BEC28686A6}"
 	ProjectSection(SolutionItems) = preProject
 		nuspec\BootstrapContent\SettingsPluginBootstrap.cs.pp = nuspec\BootstrapContent\SettingsPluginBootstrap.cs.pp
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EShyMedia.MvvmCross.Plugins.Settings.iOS", "EShyMedia.MvvmCross.Plugins.Settings.iOS\EShyMedia.MvvmCross.Plugins.Settings.iOS.csproj", "{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,14 +55,6 @@ Global
 		{FCE12871-0F77-4B73-82E7-536E38DAA045}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FCE12871-0F77-4B73-82E7-536E38DAA045}.Release|ARM.ActiveCfg = Release|Any CPU
 		{FCE12871-0F77-4B73-82E7-536E38DAA045}.Release|x86.ActiveCfg = Release|Any CPU
-		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Release|ARM.ActiveCfg = Release|Any CPU
-		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Release|x86.ActiveCfg = Release|Any CPU
 		{07F5B7DD-2F46-4DA9-8E2F-C027E7024241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07F5B7DD-2F46-4DA9-8E2F-C027E7024241}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07F5B7DD-2F46-4DA9-8E2F-C027E7024241}.Debug|ARM.ActiveCfg = Debug|ARM
@@ -82,6 +75,18 @@ Global
 		{2D171C82-89D0-425E-A3B5-B6223444AECD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2D171C82-89D0-425E-A3B5-B6223444AECD}.Release|ARM.ActiveCfg = Release|Any CPU
 		{2D171C82-89D0-425E-A3B5-B6223444AECD}.Release|x86.ActiveCfg = Release|Any CPU
+		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Debug|ARM.Build.0 = Debug|Any CPU
+		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Debug|x86.Build.0 = Debug|Any CPU
+		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Release|ARM.ActiveCfg = Release|Any CPU
+		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Release|ARM.Build.0 = Release|Any CPU
+		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Release|x86.ActiveCfg = Release|Any CPU
+		{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

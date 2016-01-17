@@ -8,9 +8,9 @@
     <ProjectGuid>{0C1ADAB5-A97D-412D-A1A7-A2D6D19A37A5}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>EShyMedia.MvvmCross.Plugins.Settings.Touch</RootNamespace>
+    <RootNamespace>EShyMedia.MvvmCross.Plugins.Settings.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>EShyMedia.MvvmCross.Plugins.Settings.Touch</AssemblyName>
+    <AssemblyName>EShyMedia.MvvmCross.Plugins.Settings.iOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,7 +27,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\Release\Mvx\Touch\</OutputPath>
+    <OutputPath>..\Release\Mvx\iOS\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Plugin.cs" />
-    <Compile Include="MvxTouchSettings.cs" />
+    <Compile Include="MvxIosSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

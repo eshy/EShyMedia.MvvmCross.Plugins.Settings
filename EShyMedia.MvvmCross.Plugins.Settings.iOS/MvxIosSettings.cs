@@ -3,9 +3,9 @@ using System.Globalization;
 using Foundation;
 using Security;
 
-namespace EShyMedia.MvvmCross.Plugins.Settings.Touch
+namespace EShyMedia.MvvmCross.Plugins.Settings.iOS
 {
-    public class MvxTouchSettings : ISettings
+    public class MvxIosSettings : ISettings
     {
         private readonly object locker = new object();
 
