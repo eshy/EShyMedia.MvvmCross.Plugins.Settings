@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>EShyMedia.MvvmCross.Plugins.Settings</id>
-        <version>2.0.3</version>
+        <version>2.0.4</version>
         <title>EShyMedia.MvvmCross.Plugins.Settings</title>
         <authors>Ishai Hachlili</authors>
         <owners>Ishai Hachlili</owners>
@@ -10,40 +10,39 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>An MvvmCross settings and secured settings plugin</description>
 		<releaseNotes>
-		2.00 - Updated to MvvmCross 4.0
-    2.03 - Fixed PCL package issue (path too long)
+		2.04 - Updated to MvvmCross 4.2
 		</releaseNotes>
         <tags>MvvmCross</tags>
         <dependencies>
 			<group targetFramework ="net">
-				<dependency id="MvvmCross.Platform" version="4.0.0" />
+				<dependency id="MvvmCross.Platform" version="4.2.0" />
 			</group>
 			<group targetFramework ="win">
-				<dependency id="MvvmCross.Platform" version="4.0.0" />
+				<dependency id="MvvmCross.Platform" version="4.2.0" />
 			</group>
 			<group targetFramework ="wp">
-				<dependency id="MvvmCross.Platform" version="4.0.0" />
+				<dependency id="MvvmCross.Platform" version="4.2.0" />
 			</group>
 			<group targetFramework ="wpa">
-				<dependency id="MvvmCross.Platform" version="4.0.0" />
+				<dependency id="MvvmCross.Platform" version="4.2.0" />
 			</group>
 			<group targetFramework ="MonoAndroid">
-				<dependency id="MvvmCross.Platform" version="4.0.0" />
+				<dependency id="MvvmCross.Platform" version="4.2.0" />
 			</group>
 			<group targetFramework ="MonoTouch">
-				<dependency id="MvvmCross.Platform" version="4.0.0" />
+				<dependency id="MvvmCross.Platform" version="4.2.0" />
 			</group>
 			<group targetFramework ="Xamarin.iOS">
-				<dependency id="MvvmCross.Platform" version="4.0.0" />
+				<dependency id="MvvmCross.Platform" version="4.2.0" />
 			</group>
 			<group targetFramework ="portable-net45+win8+wpa81+wp8">
-				<dependency id="MvvmCross.Platform" version="4.0.0" />
+				<dependency id="MvvmCross.Platform" version="4.2.0" />
 			</group>
 			<group targetFramework ="uap">
-				<dependency id="MvvmCross.Platform" version="4.0.0" />
+				<dependency id="MvvmCross.Platform" version="4.2.0" />
 			</group>
 			<group targetFramework ="dotnet">
-				<dependency id="MvvmCross.Platform" version="4.0.0" />
+				<dependency id="MvvmCross.Platform" version="4.2.0" />
 			</group>		
         </dependencies>
     </metadata>
