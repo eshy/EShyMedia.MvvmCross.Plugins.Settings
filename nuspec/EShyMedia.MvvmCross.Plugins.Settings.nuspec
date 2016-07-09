@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>EShyMedia.MvvmCross.Plugins.Settings</id>
-        <version>2.0.0</version>
+        <version>2.0.3</version>
         <title>EShyMedia.MvvmCross.Plugins.Settings</title>
         <authors>Ishai Hachlili</authors>
         <owners>Ishai Hachlili</owners>
@@ -11,6 +11,7 @@
         <description>An MvvmCross settings and secured settings plugin</description>
 		<releaseNotes>
 		2.00 - Updated to MvvmCross 4.0
+    2.03 - Fixed PCL package issue (path too long)
 		</releaseNotes>
         <tags>MvvmCross</tags>
         <dependencies>
@@ -50,8 +51,8 @@
 
 	
 		<!-- PCL -->
-        <file src="..\Release\Mvx\Portable\EShyMedia.MvvmCross.Plugins.Settings.*" target="lib\portable-win+net45+wp8+win8+wpa81+MonoTouch+MonoAndroid+Xamarin.iOS\EShyMedia.MvvmCross.Plugins.Settings.dll" />
-		<file src="Settings.cs.pp" target="content\portable-win+net45+wp8+win8+wpa81+MonoTouch+MonoAndroid+Xamarin.iOS\Helpers\Settings.cs.pp" />
+    <file src="..\Release\Mvx\Portable\EShyMedia.MvvmCross.Plugins.Settings.*" target="lib\portable-net45+win8+wpa81+wp8\EShyMedia.MvvmCross.Plugins.Settings.dll" />
+		<file src="Settings.cs.pp" target="content\portable-net45+win8+wpa81+wp8\Helpers\Settings.cs.pp" />
 
 		<!-- dotnet -->
 		<file src="..\Release\Mvx\Portable\EShyMedia.MvvmCross.Plugins.Settings.*" target="lib\dotnet" />
