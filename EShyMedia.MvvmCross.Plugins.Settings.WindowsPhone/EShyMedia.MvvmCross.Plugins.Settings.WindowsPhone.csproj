@@ -83,6 +83,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Plugin.cs" />
     <Compile Include="MvxWindowsPhoneSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
