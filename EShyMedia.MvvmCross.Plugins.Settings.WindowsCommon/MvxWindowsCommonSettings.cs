@@ -7,19 +7,13 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.WindowsCommon
 {
     public class MvxWindowsCommonSettings : ISettings
     {
-        private static ApplicationDataContainer LocalSettings
-        {
-            get { return ApplicationData.Current.LocalSettings; }
-        }
+        private static ApplicationDataContainer LocalSettings => ApplicationData.Current.LocalSettings;
 
-        private static ApplicationDataContainer RoamingSettings
-        {
-            get { return ApplicationData.Current.RoamingSettings; }
-        }
+        private static ApplicationDataContainer RoamingSettings => ApplicationData.Current.RoamingSettings;
 
         private static T GetValue<T>(ApplicationDataContainer container, string key, T defaultValue = default(T))
         {
-            if (container == null) throw new ArgumentNullException("container");
+            if (container == null) throw new ArgumentNullException(nameof(container));
 
             object value;
 
@@ -42,7 +36,7 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.WindowsCommon
 
         private static bool AddOrUpdateValue<T>(ApplicationDataContainer container, string key, T value = default(T))
         {
-            if (container == null) throw new ArgumentNullException("container");
+            if (container == null) throw new ArgumentNullException(nameof(container));
 
             if (container.Values.ContainsKey(key))
             {
@@ -56,9 +50,16 @@ namespace EShyMedia.MvvmCross.Plugins.Settings.WindowsCommon
 
         public bool AddOrUpdateValue<T>(string key, T value = default(T), bool roaming = false)
         {
-            if (typeof (T) == typeof (DateTime))
+            if (value is Enum)
             {
-                var dt = ((DateTime) (object) value);
+                var e = Enum.Parse(typeof(T), value.ToString()) as Enum;
+                var i = Convert.ToInt32(e);
+                return AddOrUpdateValue(!roaming ? LocalSettings : RoamingSettings, key, i);
+            }
+
+            if (value is DateTime)
+            {
+                var dt = ((DateTime)(object)value);
 
                 var dto = (DateTimeOffset)dt;
                 return AddOrUpdateValue(!roaming ? LocalSettings : RoamingSettings, key, dto);
